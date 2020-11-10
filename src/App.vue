@@ -1,22 +1,29 @@
 <template>
   <div id="app">
-    <router-view/>
+    <GlobalNavigation></GlobalNavigation>
+    <router-view class="container"></router-view>
   </div>
 </template>
 
 <script>
+import GlobalNavigation from './components/GlobalNavigation.vue'
+
 export default {
-  name: 'App'
+  name: 'app',
+  components: {GlobalNavigation},
+  data () {
+    return {
+
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+  background-color: #8fcafe;
 }
+
+
+
 </style>
