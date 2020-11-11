@@ -49,9 +49,7 @@
 
       <template v-slot:footer>
         <v-row
-          class="mt-2"
-          align="center"
-          justify="center"
+          class="mt-2 col-12"
         >
           <span class="grey--text">Items per page</span>
           <v-menu offset-y>
@@ -159,3 +157,7 @@ export default {
   },
 }
 </script>
+
+<style>
+
+</style>
