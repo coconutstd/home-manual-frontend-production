@@ -20,6 +20,9 @@ const mutations = {
     console.log(results, keyword)
     state.keyword = keyword
     state.searchResults = results
+  },
+  SET_CODES (state, {codes}) {
+    state.codes = codes
   }
 }
 

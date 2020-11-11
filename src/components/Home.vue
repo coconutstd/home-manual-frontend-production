@@ -12,7 +12,7 @@
             </p>
             <form action="#" method="post" class="search-form">
               <div class="input-group">
-                <AutoComplete value="keyword"></AutoComplete>
+                <AutoComplete value="keyword" :codes="this.$store.state.codes"></AutoComplete>
                 <!--              <input v-model="keyword" class="search-form-input" type="text" placeholder="제품번호를 입력해주세요"/>-->
                 <button class="search-form-button btn" type="submit" @click.prevent="search">검색</button>
               </div>
@@ -28,15 +28,19 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
-import AutoComplete from "./AutoComplete.vue"
+import {mapGetters, mapActions, mapState} from 'vuex'
+import AutoComplete from './AutoComplete.vue'
 
 export default {
-  data() {
+  data () {
     return {
       msg: 'Home',
       keyword: '',
+      codes: [],
     }
+  },
+  created () {
+    this.FETCH_CODES()
   },
   components: {
     AutoComplete
@@ -48,14 +52,15 @@ export default {
   },
   methods: {
     ...mapActions([
-      'FETCH_RESULTS'
+      'FETCH_RESULTS',
+      'FETCH_CODES'
     ]),
-    search() {
+    search () {
       if (!this.keyword.length) return
       this.FETCH_RESULTS({keyword: this.keyword})
       // .then(({keyword}) => this.$router.push(`/search/${keyword}`))
       this.$router.push(`/manual/${this.keyword}`)
-    },
+    }
   }
 }
 </script>
@@ -63,6 +68,7 @@ export default {
 <style>
 
 main {
+  font-family: "omni_030";
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +101,6 @@ main {
   .user-email {
     font-size: 30px;
   }
-
   .main-desc {
     text-align: center;
   }

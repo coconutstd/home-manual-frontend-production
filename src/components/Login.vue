@@ -18,7 +18,7 @@ export default {
   },
   mounted() {
     const naverLogin = new naver.LoginWithNaverId({
-      clientId: '',
+      clientId: 'p_P6CJqSge7yXo88mCvG',
       callbackUrl: `http://localhost:8080/login_callback`,
       isPopup: false ,
       loginButton: {
@@ -43,7 +43,7 @@ export default {
 .oauth_list {
   background-color: #fff;
   border-radius: 16px;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 12px 12px 2px 1px rgba(143, 217, 182, .85);
   display: flex;
   justify-content: center;
   align-items: center;

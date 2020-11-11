@@ -22,22 +22,36 @@ export default {
 </script>
 
 <style>
-body{
-  background-color: #D8F2E2;
+
+@font-face {
+  font-family: "omni_020";
+  src:url("assets/font/omni_020.ttf") format("truetype");
 }
 
-.background {
+@font-face {
+  font-family: "omni_030";
+  src:url("assets/font/omni_030.ttf") format("truetype");
+}
+
+body{
+  background-color: #D8F2E2;
+  height: 100vh;
   position: relative;
   z-index:1;
 }
 
-.background:after{
-  background-image: url('assets/back_image.jpg');
+/*.background {*/
+/*  position: relative;*/
+/*  z-index:1;*/
+/*}*/
+
+body:after{
+  background-image: url('assets/background_2.jpg');
+  background-size: cover;
   display: block;
   top:0;
   left:0;
   position:absolute;
-  background-size:100%;
   opacity:0.2!important;
   filter:alpha(opacity=50);
   z-index:-1;

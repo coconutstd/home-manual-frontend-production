@@ -67,6 +67,7 @@ export default {
 <style>
 .navbar {
   background-color: #15BF70;
+  font-family: "omni_020";
 }
 .navbar-brand {
   font-size: 15px;

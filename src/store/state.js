@@ -3,6 +3,7 @@ const state = {
   email : '',
   searchResults: {},
   keyword: '',
+  codes: []
 }
 
 export default state

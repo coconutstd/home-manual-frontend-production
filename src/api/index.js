@@ -2,7 +2,7 @@ import axios from 'axios'
 import router from '../router'
 
 // const DOMAIN = 'http://localhost:80'
-const DOMAIN = 'https://7vmq93x521.execute-api.ap-northeast-2.amazonaws.com/search'
+const DOMAIN = 'https://7vmq93x521.execute-api.ap-northeast-2.amazonaws.com/api'
 const UNAUTHORIZED = 401
 const onUnauthorized = () => {
   router.push(`/login?rPath=${encodeURIComponent(location.pathname)}`)
@@ -30,6 +30,12 @@ export const manual = {
   //   return keyword ? request('get', `/manual?category=${keyword}`) : request('get', '/manual')
   // },
   fetch(keyword) {
-    return keyword ? request('get', `?q=${keyword}`) : request('get', '/manual')
+    return keyword ? request('get', `/search?q=${keyword}`) : request('get', '/search')
   },
+}
+
+export const main = {
+  fetch () {
+    return request('get', '/codes')
+  }
 }
