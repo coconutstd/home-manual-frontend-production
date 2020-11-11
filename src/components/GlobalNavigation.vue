@@ -21,7 +21,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input v-model="keyword" class="form-control mr-sm-2" type="search" placeholder="검색어를 입력해주세요" aria-label="Search">
-          <button @click.prevent="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button @click.prevent="search" id="toggle-btn" class="btn my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
@@ -66,11 +66,32 @@ export default {
 
 <style>
 .navbar {
-  background-color: #15BF70;
-  font-family: "omni_020";
+  background-color: #009688;
+  font-family: "omni_040";
+  font-weight: bold;
 }
+#app > div > div:nth-child(1) > nav > button{
+  border: none;
+}
+#app > div > div:nth-child(1) > nav > a,
+#navbarSupportedContent > ul > li:nth-child(1) > a,
+#navbarSupportedContent > ul > li:nth-child(2) > div > a
+{
+  color : white;
+}
+
+#toggle-btn{
+  background-color: black;
+  color: white;
+  font-weight: 700;
+}
+
+#toggle-btn:hover{
+  background-color: darkgray;
+}
+
 .navbar-brand {
-  font-size: 15px;
+  font-size: 29px;
 }
 
 .form-inline input{

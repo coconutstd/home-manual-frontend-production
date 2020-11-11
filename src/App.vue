@@ -3,16 +3,18 @@
     <div class="background">
       <GlobalNavigation></GlobalNavigation>
       <router-view class="container"></router-view>
+      <Footer></Footer>
     </div>
   </div>
 </template>
 
 <script>
 import GlobalNavigation from './components/GlobalNavigation.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'app',
-  components: {GlobalNavigation},
+  components: {GlobalNavigation, Footer},
   data () {
     return {
 
@@ -32,10 +34,12 @@ export default {
   font-family: "omni_030";
   src:url("assets/font/omni_030.ttf") format("truetype");
 }
+.background{
+  height: 100vh;
+}
 
 body{
   background-color: #D8F2E2;
-  height: 100vh;
   position: relative;
   z-index:1;
 }
