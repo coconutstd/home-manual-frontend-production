@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <GlobalNavigation></GlobalNavigation>
-    <router-view class="container"></router-view>
+    <div class="background">
+      <GlobalNavigation></GlobalNavigation>
+      <router-view class="container"></router-view>
+    </div>
   </div>
 </template>
 
@@ -21,9 +23,27 @@ export default {
 
 <style>
 body{
-  background-color: #8fcafe;
+  background-color: #D8F2E2;
 }
 
+.background {
+  position: relative;
+  z-index:1;
+}
 
+.background:after{
+  background-image: url('assets/back_image.jpg');
+  display: block;
+  top:0;
+  left:0;
+  position:absolute;
+  background-size:100%;
+  opacity:0.2!important;
+  filter:alpha(opacity=50);
+  z-index:-1;
+  content:"";
+  width:100%;
+  height:100%;
+}
 
 </style>

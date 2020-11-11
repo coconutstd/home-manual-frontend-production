@@ -66,7 +66,7 @@ export default {
 
 <style>
 .navbar {
-  background-color: #e3f2fd;
+  background-color: #15BF70;
 }
 .navbar-brand {
   font-size: 15px;
