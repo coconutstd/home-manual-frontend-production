@@ -10,6 +10,7 @@
       hide-details
       label="제품 번호를 입력하세요"
       solo-inverted
+      @keydown="onKeydown"
     ></v-autocomplete>
 </template>
 
@@ -38,6 +39,11 @@ export default {
         })
         this.loading = false
       }, 500)
+    },
+    onKeydown (e) {
+      console.log(e)
+      if (e.code !== 'Enter') return
+      this.$emit('onKeydown', {search: this.search})
     }
   }
 }

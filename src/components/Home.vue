@@ -4,19 +4,19 @@
       <main>
         <div class="row">
           <div class="col-12">
-            <h1 class="user-email" v-if="isAuth">{{ this.$store.state.email }} 님 안녕하세요</h1>
+            <h1 class="user-email" v-if="isAuth">{{ email }} 님 안녕하세요</h1>
             <p class="main-desc">
               우리집 사용설명서 <br/><strong>한국형 통합 사용설명서</strong> 검색서비스입니다.<br/>
               로그인하시면 내가 원하는 설명서들을 한곳에 모을 수 있는
               <strong>개인모음집</strong> 서비스를 사용할 수 있습니다.
             </p>
-            <form action="#" method="post" class="search-form">
-              <div class="input-group">
-                <AutoComplete value="keyword" :codes="this.$store.state.codes"></AutoComplete>
-                <!--              <input v-model="keyword" class="search-form-input" type="text" placeholder="제품번호를 입력해주세요"/>-->
-                <button class="search-form-button btn" type="submit" @click.prevent="search">검색</button>
-              </div>
-            </form>
+            <AutoComplete @onKeydown="search" :codes="codes" @submit="search"></AutoComplete>
+<!--            <form action="#" method="post" class="search-form">-->
+<!--              <div class="input-group">-->
+<!--                -->
+<!--&lt;!&ndash;                <button class="search-form-button btn" type="submit" >검색</button>&ndash;&gt;-->
+<!--              </div>-->
+<!--            </form>-->
           </div>
         </div>
 
@@ -35,8 +35,7 @@ export default {
   data () {
     return {
       msg: 'Home',
-      keyword: '',
-      codes: [],
+      keyword: ''
     }
   },
   created () {
@@ -49,13 +48,17 @@ export default {
     ...mapGetters([
       'isAuth'
     ]),
+    ...mapState([
+      'codes', 'email'
+    ])
   },
   methods: {
     ...mapActions([
       'FETCH_RESULTS',
       'FETCH_CODES'
     ]),
-    search () {
+    search ({search}) {
+      this.keyword = search
       if (!this.keyword.length) return
       this.FETCH_RESULTS({keyword: this.keyword})
       // .then(({keyword}) => this.$router.push(`/search/${keyword}`))
