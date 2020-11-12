@@ -48,3 +48,12 @@ export const custom = {
     return axios({method: 'get', url: 'http://localhost/custom'}).then(result => result.data)
   }
 }
+
+export const card = {
+  create (title, listId, pos) {
+    return request('post', '/cards', {title, listId, pos})
+  },
+  fetch (id) {
+    return axios({method: 'get', url: `http://localhost/cards/${id}`}).then(result => result.data)
+  }
+}

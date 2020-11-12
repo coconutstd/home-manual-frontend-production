@@ -26,6 +26,10 @@ const mutations = {
   },
   SET_CUSTOM (state, {custom}) {
     state.custom = custom
+  },
+  SET_CARD (state, card) {
+    console.log(card)
+    state.card = card
   }
 }
 

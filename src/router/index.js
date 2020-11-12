@@ -6,6 +6,7 @@ import NotFound from '../components/NotFound.vue'
 import LoginCallback from '../components/LoginCallback.vue'
 import SearchResult from '../components/SearchResult.vue'
 import CustomManual from '../components/CustomManual.vue'
+import Card from '../components/Card.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -42,7 +43,8 @@ const router = new VueRouter({
     {
       path: '/custom_manual',
       component: CustomManual,
-      beforeEnter: requireAuth
+      beforeEnter: requireAuth,
+      children: [{path: 'c/:cid', component: Card}]
     },
     {
       path: '*',

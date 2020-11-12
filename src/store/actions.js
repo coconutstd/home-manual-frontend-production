@@ -22,6 +22,12 @@ const actions = {
     api.custom.fetch(userId).then(data => {
       commit('SET_CUSTOM', {custom: data})
     })
+  },
+  FETCH_CARD ({commit}, {id}) {
+    return api.card.fetch(id).then(data => {
+      console.log(data)
+      commit('SET_CARD', data.item)
+    })
   }
 }
 

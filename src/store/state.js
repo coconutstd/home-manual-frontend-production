@@ -5,7 +5,8 @@ const state = {
   keyword: '',
   isAddCard: false,
   codes: [],
-  custom: {}
+  custom: {},
+  card: {}
 }
 
 export default state
