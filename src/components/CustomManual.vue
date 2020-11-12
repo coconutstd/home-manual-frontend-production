@@ -1,14 +1,16 @@
 <template>
   <div>
-    <div class="custom-wrapper">
-      <div class="custom">
-        <div class="custom-header">
-          <span class="custom-title">{{ email }}</span>
-        </div>
-        <div class="list-section-wrapper">
-          <div class="list-section">
-            <div class="list-wrapper" v-for="list in custom.group_lists" :key="list.id">
-              <List :data="list"></List>
+    <div class="base-wrapper">
+      <div class="custom-wrapper">
+        <div class="custom">
+          <div class="custom-header">
+            <span class="custom-title">{{ email }}</span>
+          </div>
+          <div class="list-section-wrapper">
+            <div class="list-section">
+              <div class="list-wrapper" v-for="list in custom.group_lists" :key="list.id">
+                <List :data="list"></List>
+              </div>
             </div>
           </div>
         </div>
@@ -59,6 +61,11 @@ export default {
 </script>
 
 <style>
+.base-wrapper{
+  flex-grow: 1;
+  height: 100%;
+  position: relative;
+}
 .custom-wrapper{
   position: absolute;
   top: 0;

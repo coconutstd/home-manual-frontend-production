@@ -34,7 +34,6 @@ html, body, #app {
 
 .main-container {
   flex-grow: 1;
-  position: relative;
 }
 
 @font-face {
