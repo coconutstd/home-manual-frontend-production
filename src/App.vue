@@ -62,6 +62,7 @@ body{
 /*}*/
 
 body:after{
+  background-repeat: repeat;
   background-image: url('assets/background_2.jpg');
   background-size: cover;
   display: block;

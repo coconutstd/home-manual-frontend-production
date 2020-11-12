@@ -1,22 +1,23 @@
 <template>
-  <div data-app>
-    <div class="home-container my-1">
-      <main >
-        <div class="row">
-          <div class="col-12">
-            <h1 class="user-email" v-if="isAuth">{{ email }} 님 안녕하세요</h1>
-            <p class="main-desc">
-              우리집 사용설명서 <br/><strong>한국형 통합 사용설명서</strong> 검색서비스입니다.<br/>
-              로그인하시면 내가 원하는 설명서들을 한곳에 모을 수 있는
-              <strong>개인모음집</strong> 서비스를 사용할 수 있습니다.
-            </p>
-            <AutoComplete @onKeydown="search" :codes="codes" @submit="search"></AutoComplete>
+  <div>
+    <div data-app class="home-wrapper">
+      <div class="home-container my-1">
+        <main>
+          <div class="row">
+            <div class="col-12">
+              <h1 class="user-email" v-if="isAuth">{{ email }} 님 안녕하세요</h1>
+              <p class="main-desc">
+                우리집 사용설명서 <br/><strong>한국형 통합 사용설명서</strong> 검색서비스입니다.<br/>
+                로그인하시면 내가 원하는 설명서들을 한곳에 모을 수 있는
+                <strong>개인모음집</strong> 서비스를 사용할 수 있습니다.
+              </p>
+              <AutoComplete @onKeydown="search" :codes="codes" @submit="search"></AutoComplete>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -61,11 +62,17 @@ export default {
 </script>
 
 <style>
+.home-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .home-container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100%;
 }
 

@@ -21,10 +21,17 @@
 <script>
 import {mapActions, mapState} from 'vuex'
 import List from './List.vue'
+import dragula from 'dragula'
+import 'dragula/dist/dragula.css'
 
 export default {
   components: {
     List
+  },
+  data () {
+    return {
+      dragularCards: null
+    }
   },
   computed: {
     ...mapState({
@@ -34,6 +41,14 @@ export default {
   },
   created () {
     this.FETCH_CUSTOM(1)
+  },
+  updated () {
+    if (this.dragularCards) this.dragularCards.destroy()
+    this.dragularCards = dragula([
+      ...Array.from(this.$el.querySelectorAll('.card-list'))
+    ]).on('drop', (el, wrapper, target, siblings) => {
+      console.log('drop')
+    })
   },
   methods: {
     ...mapActions([
