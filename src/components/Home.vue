@@ -81,10 +81,6 @@ export default {
   height:100%;
 }
 
-.item{
-  margin-bottom: 20%;
-}
-
 .user-email {
   font-size: 20px;
   text-align: center;
