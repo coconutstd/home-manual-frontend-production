@@ -64,7 +64,7 @@ export default {
   },
   components: {
     DataResult
-  },
+  }
 }
 </script>
 

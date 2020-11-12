@@ -46,65 +46,64 @@
           </v-col>
         </v-row>
       </template>
-
-      <template v-slot:footer>
-        <v-row
-          class="mt-2 col-12"
-        >
-          <span class="grey--text">Items per page</span>
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                dark
-                text
-                color="primary"
-                class="ml-2"
-                v-bind="attrs"
-                v-on="on"
-              >
-                {{ itemsPerPage }}
-                <v-icon>mdi-chevron-down</v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item
-                v-for="(number, index) in itemsPerPageArray"
-                :key="index"
-                @click="updateItemsPerPage(number)"
-              >
-                <v-list-item-title>{{ number }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-
-          <v-spacer></v-spacer>
-
-          <span
-            class="mr-4
-            grey--text"
+        <template v-slot:footer>
+          <v-row
+            class="table-footer mt-2 col-12"
           >
+            <span class="grey--text">Items per page</span>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  dark
+                  text
+                  color="primary"
+                  class="ml-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  {{ itemsPerPage }}
+                  <v-icon>mdi-chevron-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(number, index) in itemsPerPageArray"
+                  :key="index"
+                  @click="updateItemsPerPage(number)"
+                >
+                  <v-list-item-title>{{ number }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+
+            <v-spacer></v-spacer>
+
+            <span
+              class="mr-4
+            grey--text"
+            >
             Page {{ page }} of {{ numberOfPages }}
           </span>
-          <v-btn
-            fab
-            dark
-            color="blue darken-3"
-            class="mr-1"
-            @click="formerPage"
-          >
-            <v-icon>mdi-chevron-left</v-icon>
-          </v-btn>
-          <v-btn
-            fab
-            dark
-            color="blue darken-3"
-            class="ml-1"
-            @click="nextPage"
-          >
-            <v-icon>mdi-chevron-right</v-icon>
-          </v-btn>
-        </v-row>
-      </template>
+            <v-btn
+              fab
+              dark
+              color="blue darken-3"
+              class="mr-1"
+              @click="formerPage"
+            >
+              <v-icon>mdi-chevron-left</v-icon>
+            </v-btn>
+            <v-btn
+              fab
+              dark
+              color="blue darken-3"
+              class="ml-1"
+              @click="nextPage"
+            >
+              <v-icon>mdi-chevron-right</v-icon>
+            </v-btn>
+          </v-row>
+        </template>
     </v-data-iterator>
   </v-container>
 </template>
@@ -133,7 +132,7 @@ export default {
         '제품코드',
         '이미지',
         '분류'
-      ],
+      ]
     }
   },
   computed: {
@@ -142,7 +141,7 @@ export default {
     },
     filteredKeys () {
       return this.keys.filter(key => key !== 'product_name')
-    },
+    }
   },
   methods: {
     nextPage () {
@@ -153,11 +152,15 @@ export default {
     },
     updateItemsPerPage (number) {
       this.itemsPerPage = number
-    },
-  },
+    }
+  }
 }
 </script>
 
 <style>
-
+.table-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

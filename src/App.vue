@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <div class="background">
-      <GlobalNavigation></GlobalNavigation>
-      <router-view class="container"></router-view>
-      <Footer></Footer>
-    </div>
+    <GlobalNavigation></GlobalNavigation>
+    <router-view class="main-container"></router-view>
   </div>
 </template>
 
@@ -24,6 +21,21 @@ export default {
 </script>
 
 <style>
+
+html, body, #app {
+  height: 100%;
+  margin: 0px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex-grow: 1;
+  position: relative;
+}
 
 @font-face {
   font-family: "omni_020";
@@ -63,5 +75,13 @@ body:after{
   width:100%;
   height:100%;
 }
+.footer{
+  display: none;
+}
 
+@media screen and (min-width: 768px) {
+  .footer{
+    display: block;
+  }
+}
 </style>

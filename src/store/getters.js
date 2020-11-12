@@ -1,5 +1,5 @@
 const getters = {
-  isAuth(state) {
+  isAuth (state) {
     return !!state.token
   }
 }

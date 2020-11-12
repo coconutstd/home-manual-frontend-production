@@ -1,9 +1,11 @@
 const state = {
   token: null,
-  email : '',
+  email: '',
   searchResults: {},
   keyword: '',
-  codes: []
+  isAddCard: false,
+  codes: [],
+  custom: {}
 }
 
 export default state

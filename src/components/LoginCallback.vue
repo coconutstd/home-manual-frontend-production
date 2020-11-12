@@ -1,20 +1,19 @@
 <template>
-
+  <div></div>
 </template>
 
 <script>
-import {mapMutations} from 'vuex'
+import {mapMutations, mapActions} from 'vuex'
 
 export default {
-  name: "LoginCallback",
-  data(){
+  data () {
     return {
-      email : '',
-      token : null,
+      email: '',
+      token: null,
       rPath: ''
     }
   },
-  created() {
+  created () {
     this.rPath = this.$route.query.rPath || '/'
     const that = this
     const naverLogin = new naver.LoginWithNaverId({
@@ -22,13 +21,14 @@ export default {
       isPopup: false
     })
     naverLogin.init()
-    naverLogin.getLoginStatus(function(status) {
+    naverLogin.getLoginStatus(function (status) {
       if (status) {
         const email = naverLogin.user.getEmail()
         const token = naverLogin.accessToken
         console.log(email)
         console.log(token)
         that.LOGIN({email: email, token: token.accessToken})
+        that.CUSTOM_CREATE({userId: email})
       } else {
         console.log('AccessToken이 올바르지 않습니다.')
       }
@@ -38,6 +38,9 @@ export default {
   methods: {
     ...mapMutations([
       'LOGIN'
+    ]),
+    ...mapActions([
+      'CUSTOM_CREATE'
     ])
   }
 }

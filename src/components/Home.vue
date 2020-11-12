@@ -1,7 +1,7 @@
 <template>
   <div data-app>
-    <div class="container my-1">
-      <main>
+    <div class="home-container my-1">
+      <main >
         <div class="row">
           <div class="col-12">
             <h1 class="user-email" v-if="isAuth">{{ email }} 님 안녕하세요</h1>
@@ -11,17 +11,9 @@
               <strong>개인모음집</strong> 서비스를 사용할 수 있습니다.
             </p>
             <AutoComplete @onKeydown="search" :codes="codes" @submit="search"></AutoComplete>
-<!--            <form action="#" method="post" class="search-form">-->
-<!--              <div class="input-group">-->
-<!--                -->
-<!--&lt;!&ndash;                <button class="search-form-button btn" type="submit" >검색</button>&ndash;&gt;-->
-<!--              </div>-->
-<!--            </form>-->
           </div>
         </div>
-
       </main>
-
     </div>
   </div>
 
@@ -69,6 +61,13 @@ export default {
 </script>
 
 <style>
+.home-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 main {
   font-family: "omni_030";

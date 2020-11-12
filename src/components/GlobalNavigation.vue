@@ -1,5 +1,4 @@
 <template>
-  <div>
     <nav class="navbar navbar-expand-md navbar-light">
       <router-link to="/" class="navbar-brand" href="#">우리집 사용설명서</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,18 +24,16 @@
         </form>
       </div>
     </nav>
-  </div>
 </template>
 
 <script>
-import router from '../router'
 import {mapGetters, mapMutations, mapActions} from 'vuex'
 
 export default {
-  data() {
-    return{
-      text : '안녕하세요',
-      keyword: '',
+  data () {
+    return {
+      text: '안녕하세요',
+      keyword: ''
     }
   },
   computed: {
@@ -51,11 +48,11 @@ export default {
     ...mapActions([
       'FETCH_RESULTS'
     ]),
-    logout(){
+    logout () {
       this.LOGOUT()
       this.$router.push('/login')
     },
-    search(){
+    search () {
       if (!this.keyword.length) return
       this.FETCH_RESULTS({keyword: this.keyword})
       this.$router.push(`/manual/${this.keyword}`)
@@ -66,6 +63,7 @@ export default {
 
 <style>
 .navbar {
+  flex: none;
   background-color: #009688;
   font-family: "omni_040";
   font-weight: bold;
@@ -73,7 +71,7 @@ export default {
 #app > div > div:nth-child(1) > nav > button{
   border: none;
 }
-#app > div > div:nth-child(1) > nav > a,
+#app > nav > a,
 #navbarSupportedContent > ul > li:nth-child(1) > a,
 #navbarSupportedContent > ul > li:nth-child(2) > div > a
 {

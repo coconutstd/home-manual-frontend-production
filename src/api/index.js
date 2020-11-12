@@ -22,20 +22,29 @@ const request = (method, url, data) => {
 }
 
 export const setAuthInHeader = token => {
-  axios.defaults.headers.common['Authorization'] = token ? `Bearer ${token}` : null;
+  axios.defaults.headers.common['Authorization'] = token ? `Bearer ${token}` : null
 }
 
 export const manual = {
   // fetch(keyword) {
   //   return keyword ? request('get', `/manual?category=${keyword}`) : request('get', '/manual')
   // },
-  fetch(keyword) {
+  fetch (keyword) {
     return keyword ? request('get', `/search?q=${keyword}`) : request('get', '/search')
-  },
+  }
 }
 
 export const main = {
   fetch () {
     return request('get', '/codes')
+  }
+}
+
+export const custom = {
+  create (userId) {
+    return request('post', '/custom', {userId})
+  },
+  fetch (userId) {
+    return axios({method: 'get', url: 'http://localhost/custom'}).then(result => result.data)
   }
 }

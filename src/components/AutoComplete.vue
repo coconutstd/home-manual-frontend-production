@@ -22,7 +22,7 @@ export default {
       loading: false,
       items: [],
       search: null,
-      select: null,
+      select: null
     }
   },
   watch: {

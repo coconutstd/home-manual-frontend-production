@@ -1,0 +1,40 @@
+{
+  "custom" : {
+    "id" : 1,
+    "createdAt" : "2020-11-12-02:54PM",
+    "updatedAt" : "2020-11-12-02:54PM",
+    "userId" : "wnsspdl@naver.com",
+    "group_lists" : [
+      {
+        "id" : 1,
+        "title" : "프린터 사용설명서들",
+        "pos" : 65535,
+        "createdAt" : "2020-11-12-02:54PM",
+        "updatedAt" : "2020-11-12-02:54PM",
+        "groupId" : 1,
+        "cards" : [
+          {
+            "id" : 1,
+            "product_code" : "SL_M25545",
+            "product_img" : "https://cdn.jjj"
+          }
+        ]
+      },
+      {
+        "id" : 2,
+        "title" : "컴퓨터 사용설명서들",
+        "pos" : 130000,
+        "createdAt" : "2020-11-12-02:54PM",
+        "updatedAt" : "2020-11-12-02:54PM",
+        "groupId" : 1,
+        "cards" : [
+          {
+            "id" : 1,
+            "product_code" : "SL_M25545",
+            "product_img" : "https://cdn.jjj"
+          }
+        ]
+      }
+    ]
+  }
+}
