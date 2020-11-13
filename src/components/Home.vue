@@ -65,14 +65,12 @@ export default {
   height: 100%;
   display: flex;
   vertical-align: middle;
+  text-align: center;
   /*position: relative;*/
 }
 .content-wrapper{
   /*position: absolute;*/
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  margin: auto;
 }
 
 .content{
