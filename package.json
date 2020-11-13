@@ -17,6 +17,7 @@
     "axios": "^0.21.0",
     "dragula": "^3.7.3",
     "vue": "^2.5.2",
+    "vue-kakao-login": "^1.0.5",
     "vue-naver-login": "^1.0.4",
     "vue-router": "^3.0.1",
     "vuetify": "^2.3.16",
