@@ -63,10 +63,12 @@ export default {
 
 .container{
   height: 100%;
-  position: relative;
+  display: flex;
+  vertical-align: middle;
+  /*position: relative;*/
 }
 .content-wrapper{
-  position: absolute;
+  /*position: absolute;*/
   top: 0;
   bottom: 0;
   right: 0;
