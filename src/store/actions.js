@@ -28,6 +28,11 @@ const actions = {
       console.log(data)
       commit('SET_CARD', data.item)
     })
+  },
+  FETCH_DETAIL ({commit}, {code}) {
+    return api.detail.fetch(code).then(data => {
+      commit('SET_DETAIL', data[0])
+    })
   }
 }
 

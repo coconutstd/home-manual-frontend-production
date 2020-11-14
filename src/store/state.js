@@ -6,7 +6,8 @@ const state = {
   isAddCard: false,
   codes: [],
   custom: {},
-  card: {}
+  card: {},
+  manual: {}
 }
 
 export default state

@@ -28,7 +28,7 @@
       <v-btn
         color="deep-purple lighten-2"
         text
-        @click="linkToDetail"
+        @click="linkToDetail(data.fields.product_code)"
       >
         링크
       </v-btn>
@@ -37,13 +37,17 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 
 export default {
   props: ['data'],
   name: 'ManualCard',
   methods: {
-    linkToDetail () {
-
+    ...mapActions(['FETCH_DETAIL']),
+    linkToDetail (code) {
+      console.log(code)
+      this.FETCH_DETAIL({code})
+      this.$router.push(`/detail/${code}`)
     }
   }
 

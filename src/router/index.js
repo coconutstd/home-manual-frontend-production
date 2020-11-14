@@ -7,6 +7,7 @@ import LoginCallback from '../components/LoginCallback.vue'
 import SearchResult from '../components/SearchResult.vue'
 import CustomManual from '../components/CustomManual.vue'
 import Card from '../components/Card.vue'
+import DetailView from '../components/views/DetailView.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -45,6 +46,10 @@ const router = new VueRouter({
       component: CustomManual,
       beforeEnter: requireAuth,
       children: [{path: 'c/:cid', component: Card}]
+    },
+    {
+      path: '/detail/:mcode',
+      component: DetailView
     },
     {
       path: '*',

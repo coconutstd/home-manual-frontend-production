@@ -57,3 +57,9 @@ export const card = {
     return axios({method: 'get', url: `http://localhost/cards/${id}`}).then(result => result.data)
   }
 }
+
+export const detail = {
+  fetch (code) {
+    return request('get', `/code?product_code=${code}`).then(result => result.body)
+  }
+}

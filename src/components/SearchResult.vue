@@ -23,7 +23,7 @@ export default {
     }),
     isSearchResult () {
       return this.searchResults.length
-    },
+    }
   },
   components: {
     DataResult,
