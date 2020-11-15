@@ -1,23 +1,39 @@
 <template>
 <div>
-  <v-card
-    class="my-4 mx-4"
-    height="100%"
-    rounded
-  >
-    <v-card-title>
-      제품명 {{ manual.product_name}}
-    </v-card-title>
-    <v-row
-      align="center"
-    >
-      <v-img v-if="isImage" :src="manual.product_image_link">
-      <v-img v-else :src="src/assets/default_printer.png">이미지가 없습니다</v-img>
+  <v-container fluid>
+    <v-row>
+      <v-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <v-card
+          rounded
+        >
+          <v-card-title>
+            제품명 {{ manual.product_name}}
+          </v-card-title>
+          <v-list>
+            <v-list-item>
+              <v-list-item-content>
+                <v-img
+                  max-width="320"
+                  v-if="isImage" :src="manual.product_image_link"></v-img>
+                <v-img v-else :src="src/assets/default_printer.png">이미지가 없습니다</v-img>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+          <v-card-text>
+            <v-chip>{{manual.category}}</v-chip>
+            <v-btn :href="manual.product_detail_page_link" target="_blank">페이지링크</v-btn>
+          </v-card-text>
+        </v-card>
+
+      </v-col>
     </v-row>
-    <v-card-text>
-      <v-btn :href="manual.product_detail_page_link" target="_blank">페이지링크</v-btn>
-    </v-card-text>
-  </v-card>
+  </v-container>
+
 
 </div>
 </template>

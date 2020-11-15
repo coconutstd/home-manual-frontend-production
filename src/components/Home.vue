@@ -51,8 +51,6 @@ export default {
     search ({search}) {
       this.keyword = search
       if (!this.keyword.length) return
-      this.FETCH_RESULTS({keyword: this.keyword})
-      // .then(({keyword}) => this.$router.push(`/search/${keyword}`))
       this.$router.push(`/manual/${this.keyword}`)
     }
   }

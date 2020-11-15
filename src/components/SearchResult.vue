@@ -1,9 +1,8 @@
 <template>
   <div>
-<!--    <DataResult :items="Array.from(searchResults)"></DataResult>-->
     <v-container fluid>
       <v-data-iterator
-        :items="searchResults"
+        :items="Array.from(searchResults)"
         hide-default-footer
         >
           <template v-slot:header>
@@ -55,7 +54,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState, mapActions} from 'vuex'
 import DataResult from './views/DataResult.vue'
 import ManualCard from './ManualCard.vue'
 
@@ -64,6 +63,9 @@ export default {
     return {
       limit: 0
     }
+  },
+  created () {
+    this.FETCH_RESULTS({keyword: this.$route.params.keyword})
   },
   computed: {
     ...mapState({
@@ -81,7 +83,8 @@ export default {
   methods: {
     linkToDetail (code) {
       this.$router.push(`/detail/${code}`)
-    }
+    },
+    ...mapActions(['FETCH_RESULTS'])
   }
 }
 </script>
