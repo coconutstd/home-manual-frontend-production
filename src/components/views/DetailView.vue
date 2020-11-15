@@ -11,8 +11,8 @@
     <v-row
       align="center"
     >
-      <img :src="manual.product_image_link" v-if="isImage" width="300px">
-      <span v-else>이미지가 없습니다</span>
+      <v-img v-if="isImage" :src="manual.product_image_link">
+      <v-img v-else :src="src/assets/default_printer.png">이미지가 없습니다</v-img>
     </v-row>
     <v-card-text>
       <v-btn :href="manual.product_detail_page_link" target="_blank">페이지링크</v-btn>

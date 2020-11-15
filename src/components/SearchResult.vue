@@ -4,7 +4,6 @@
     <v-container fluid>
       <v-data-iterator
         :items="searchResults"
-        :items-per-page.sync="itemsPerPage"
         hide-default-footer
         >
           <template v-slot:header>
@@ -51,7 +50,7 @@
 
       </v-data-iterator>
     </v-container>
-    <ManualCard :data="item" v-for="item in searchResults" :key="item.id"></ManualCard>
+<!--    <ManualCard :data="item" v-for="item in searchResults" :key="item.id"></ManualCard>-->
   </div>
 </template>
 
