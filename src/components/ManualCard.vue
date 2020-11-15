@@ -3,22 +3,19 @@
     class="mx-auto my-12"
     max-width="374"
   >
-    <template slot="progress">
-      <v-progress-linear
-        color="deep-purple"
-        height="10"
-        indeterminate
-      ></v-progress-linear>
-    </template>
-
+    <v-img
+      height="250"
+      :src="data.fields.product_image_link"
+      ></v-img>
     <v-card-title>{{ data.fields.product_code }}</v-card-title>
-
     <v-card-text>
       <v-row
         align="center"
         class="mx-0"
       >
-        <v-chip>{{ data.fields.category }}</v-chip>
+        <v-col>
+          <v-chip>{{ data.fields.category }}</v-chip>
+        </v-col>
       </v-row>
 
     </v-card-text>

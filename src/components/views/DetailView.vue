@@ -1,10 +1,9 @@
 <template>
 <div>
-  <pre>
-    {{ manual }}
-  </pre>
+  <h1> 제품명: {{ manual.product_name}} </h1>
   <img :src="manual.product_image_link" v-if="isImage" width="300px">
   <span v-else>이미지가 없습니다</span>
+  <a :href="manual.product_detail_page_link" target="_blank">페이지링크</a>
 </div>
 </template>
 
