@@ -26,7 +26,11 @@
                 md="4"
                 lg="3"
                 >
-                <v-card>
+                <v-card
+                  class="mx-auto"
+                  max-width="400"
+                >
+                  <v-img :src="item.fields.product_image_link"></v-img>
                   <v-card-title class="subheading font-weight-bold">
                     {{item.fields.product_code}}
                   </v-card-title>
@@ -35,10 +39,9 @@
                     <v-list-item
                       >
                       <v-list-item-content>
-                        <v-img :src="item.fields.product_image_link"></v-img>
-                      </v-list-item-content>
-                      <v-list-item-content>
-                        <v-btn type="button" @click.prevent="linkToDetail(item.fields.product_code)">상세페이지</v-btn>
+                        <v-card-actions>
+                          <v-btn color="orange" text @click.prevent="linkToDetail(item.fields.product_code)">상세페이지</v-btn>
+                        </v-card-actions>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>

@@ -17,12 +17,11 @@
           <v-list>
             <v-list-item>
               <v-list-item-content>
-                <v-img
-                  max-width="320"
-                  v-if="isImage" :src="manual.product_image_link"></v-img>
-                <v-img v-else :src="src/assets/default_printer.png">이미지가 없습니다</v-img>
+                <v-img v-if="isImage" src="assets/default_printer.png">이미지가 없습니다</v-img>
+                <v-img aspect-ratio="1" v-else :src="manual.product_image_link"></v-img>
               </v-list-item-content>
             </v-list-item>
+            <v-divider></v-divider>
           </v-list>
           <v-card-text>
             <v-chip>{{manual.category}}</v-chip>
@@ -49,7 +48,7 @@ export default {
       manual: 'manual'
     }),
     isImage () {
-      return this.manual.product_image_link !== 0
+      return this.manual.product_image_link === 0
     }
   },
   methods: {
