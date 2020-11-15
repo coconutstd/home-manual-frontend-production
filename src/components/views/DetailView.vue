@@ -1,9 +1,24 @@
 <template>
 <div>
-  <h1> 제품명: {{ manual.product_name}} </h1>
-  <img :src="manual.product_image_link" v-if="isImage" width="300px">
-  <span v-else>이미지가 없습니다</span>
-  <a :href="manual.product_detail_page_link" target="_blank">페이지링크</a>
+  <v-card
+    class="my-4 mx-4"
+    height="100%"
+    rounded
+  >
+    <v-card-title>
+      제품명 {{ manual.product_name}}
+    </v-card-title>
+    <v-row
+      align="center"
+    >
+      <img :src="manual.product_image_link" v-if="isImage" width="300px">
+      <span v-else>이미지가 없습니다</span>
+    </v-row>
+    <v-card-text>
+      <v-btn :href="manual.product_detail_page_link" target="_blank">페이지링크</v-btn>
+    </v-card-text>
+  </v-card>
+
 </div>
 </template>
 
@@ -29,6 +44,9 @@ export default {
 }
 </script>
 
-<style scoped>
 
+<style scoped>
+@media screen and (min-width: 768px){
+
+}
 </style>
