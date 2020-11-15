@@ -42,7 +42,7 @@ export default {
     })
   },
   created () {
-    this.FETCH_CUSTOM(1)
+    this.FETCH_CUSTOM({userId: this.email})
   },
   updated () {
     if (this.dragularCards) this.dragularCards.destroy()

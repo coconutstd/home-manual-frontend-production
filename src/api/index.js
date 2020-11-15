@@ -45,7 +45,7 @@ export const custom = {
     return request('post', '/custom', {userId})
   },
   fetch (userId) {
-    return axios({method: 'get', url: 'http://localhost/custom'}).then(result => result.data)
+    return request('get', `/custom?user_id=${userId}`)
   }
 }
 

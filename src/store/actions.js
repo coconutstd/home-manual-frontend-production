@@ -20,7 +20,7 @@ const actions = {
   },
   FETCH_CUSTOM ({commit}, {userId}) {
     api.custom.fetch(userId).then(data => {
-      commit('SET_CUSTOM', {custom: data})
+      commit('SET_CUSTOM', {custom: data.body[0]})
     })
   },
   FETCH_CARD ({commit}, {id}) {
