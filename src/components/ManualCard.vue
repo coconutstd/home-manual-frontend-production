@@ -1,6 +1,5 @@
 <template>
   <v-card
-    :loading="loading"
     class="mx-auto my-12"
     max-width="374"
   >
@@ -46,7 +45,6 @@ export default {
     ...mapActions(['FETCH_DETAIL']),
     linkToDetail (code) {
       console.log(code)
-      this.FETCH_DETAIL({code})
       this.$router.push(`/detail/${code}`)
     }
   }
