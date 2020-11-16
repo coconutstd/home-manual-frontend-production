@@ -24,7 +24,7 @@ export default {
   mounted () {
     const naverLogin = new naver.LoginWithNaverId({
       clientId: 'p_P6CJqSge7yXo88mCvG',
-      callbackUrl: `http://localhost:8080/login_callback`,
+      callbackUrl: `http://home.manual.s3-website.ap-northeast-2.amazonaws.com/login`,
       isPopup: false,
       loginButton: {
         color: 'green',
