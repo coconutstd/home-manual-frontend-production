@@ -3,11 +3,6 @@
     <div class="container">
       <div class="oauth_list">
         <div id="naverIdLogin"></div>
-        <NaverLogin
-          client-id=""
-          callback-url="http://localhost:8080/"
-          v=""
-          />
       </div>
     </div>
   </div>
