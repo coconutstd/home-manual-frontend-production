@@ -40,7 +40,7 @@
                     <v-list-item
                       >
                       <v-list-item-content>
-                        <v-card-actions>
+                        <v-card-actions class="search-content">
                           <v-btn class="mr-auto" color="orange" @click.prevent="linkToDetail(item.fields.product_code)">상세페이지</v-btn>
                           <v-btn color="orange" v-if="item.fields.manual_link !== undefined" :href="item.fields.manual_link" target="_blank">사용자매뉴얼</v-btn>
                           <v-btn color="orange" @click.prevent="">+</v-btn>
@@ -101,13 +101,6 @@ export default {
 
 <style scoped>
 
-.search-title{
-  font-size: 20px;
-}
-
-.v-data-iterator{
-  width: 100%;
-}
 
 .table h2{
   font-size: 10px;

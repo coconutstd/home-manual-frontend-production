@@ -84,6 +84,7 @@ export default {
 }
 
 .main-desc{
+  font-family: omni_020;
   text-align: center;
 }
 
