@@ -11,6 +11,7 @@
       label="제품 번호를 입력하세요"
       solo-inverted
       @keydown="onKeydown"
+      @input="onChange"
     ></v-autocomplete>
 </template>
 
@@ -41,9 +42,12 @@ export default {
       }, 500)
     },
     onKeydown (e) {
-      console.log(e)
       if (e.code !== 'Enter') return
       this.$emit('onKeydown', {search: this.search})
+    },
+    onChange (e) {
+      console.log('changed! ' + e)
+      this.$emit('onInputChange', {search: e})
     }
   }
 }

@@ -10,7 +10,7 @@
               로그인하시면 내가 원하는 설명서들을 한곳에 모을 수 있는
               <strong>개인모음집</strong> 서비스를 사용할 수 있습니다.
             </p>
-            <AutoComplete @onKeydown="search" :codes="codes" @submit="search"></AutoComplete>
+            <AutoComplete @onKeydown="search" :codes="codes" @submit="search" @onInputChange="search"></AutoComplete>
           </div>
         </div>
       </div>
