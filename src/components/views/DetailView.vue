@@ -23,12 +23,19 @@
             </v-list-item>
             <v-divider></v-divider>
           </v-list>
-          <v-card-text>
-            <v-chip>{{manual.category}}</v-chip>
-            <v-btn :href="manual.product_detail_page_link" target="_blank">페이지링크</v-btn>
-          </v-card-text>
+          <v-list>
+            <v-list-item>
+              <v-list-item-content>
+                <v-btn :href="manual.product_detail_page_link" target="_blank">페이지링크</v-btn>
+                <v-btn v-if="manual.manual_link.length !== 0" :href="manual.manual_link" target="_blank">사용자매뉴얼</v-btn>
+                <v-card-text v-else>사용설명서가 없습니다</v-card-text>
+                <v-chip-group>
+                  <v-chip align="center">{{manual.category}}</v-chip>
+                </v-chip-group>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
         </v-card>
-
       </v-col>
     </v-row>
   </v-container>

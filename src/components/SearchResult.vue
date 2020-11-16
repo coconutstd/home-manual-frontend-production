@@ -30,7 +30,8 @@
                   class="mx-auto"
                   max-width="400"
                 >
-                  <v-img :src="item.fields.product_image_link"></v-img>
+                  <v-img :src="item.fields.product_image_link" v-if="(item.fields.product_image_link !== '0')"></v-img>
+                  <v-img v-else :src="`https://s3.ap-northeast-2.amazonaws.com/home.manual/assets/default_printer.png`" alt="이미지가 없습니다"></v-img>
                   <v-card-title class="subheading font-weight-bold">
                     {{item.fields.product_code}}
                   </v-card-title>
@@ -40,7 +41,9 @@
                       >
                       <v-list-item-content>
                         <v-card-actions>
-                          <v-btn color="orange" text @click.prevent="linkToDetail(item.fields.product_code)">상세페이지</v-btn>
+                          <v-btn class="mr-auto" color="orange" @click.prevent="linkToDetail(item.fields.product_code)">상세페이지</v-btn>
+                          <v-btn color="orange" v-if="item.fields.manual_link !== undefined" :href="item.fields.manual_link" target="_blank">사용자매뉴얼</v-btn>
+                          <v-btn color="orange" @click.prevent="">+</v-btn>
                         </v-card-actions>
                       </v-list-item-content>
                     </v-list-item>
@@ -87,7 +90,11 @@ export default {
     linkToDetail (code) {
       this.$router.push(`/detail/${code}`)
     },
-    ...mapActions(['FETCH_RESULTS'])
+    ...mapActions(['FETCH_RESULTS']),
+    isManual (link) {
+      console.log(link)
+      return link.length === 0
+    }
   }
 }
 </script>
