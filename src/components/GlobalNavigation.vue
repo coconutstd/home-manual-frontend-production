@@ -10,12 +10,18 @@
             <router-link to="/custom_manual" class="nav-link" href="#">개인모음집</router-link>
           </li>
           <li class="nav-item">
-            <div v-if="isAuth">
-              <a href="#" @click="logout" class="nav-link ml-auto mr-3">로그아웃</a>
+            <div v-if="!$auth.loading">
+              <!-- show login when not authenticated -->
+              <button v-if="!$auth.isAuthenticated" class="nav-link ml-auto mr-3" @click="login">Log in</button>
+              <!-- show logout when authenticated -->
+              <button v-if="$auth.isAuthenticated" class="nav-link ml-auto mr-3" @click="logout">Log out</button>
             </div>
-            <div v-else>
-              <router-link to="/login" class="nav-link ml-auto mr-3">로그인</router-link>
-            </div>
+<!--            <div v-if="isAuth">-->
+<!--              <a href="#" @click="logout" class="nav-link ml-auto mr-3">로그아웃</a>-->
+<!--            </div>-->
+<!--            <div v-else>-->
+<!--              <router-link to="/login" class="nav-link ml-auto mr-3">로그인</router-link>-->
+<!--            </div>-->
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -48,10 +54,19 @@ export default {
     ...mapActions([
       'FETCH_RESULTS'
     ]),
-    logout () {
-      this.LOGOUT()
-      this.$router.push('/login')
+    login () {
+      this.$auth.loginWithRedirect()
     },
+    // Log the user out
+    logout () {
+      this.$auth.logout({
+        returnTo: window.location.origin
+      })
+    },
+    // logout () {
+    //   this.LOGOUT()
+    //   this.$router.push('/login')
+    // },
     search () {
       if (!this.keyword.length) return
       this.FETCH_RESULTS({keyword: this.keyword})
