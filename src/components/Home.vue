@@ -4,7 +4,7 @@
       <div class="content-wrapper">
         <div class="content">
           <div class="item">
-            <h1 class="user-email" v-if="isAuth">{{ email }} 님 안녕하세요</h1>
+            <h1 class="user-email" v-if="$auth.isAuthenticated">{{ $auth.user.email }} 님 안녕하세요</h1>
             <p class="main-desc">
               우리집 사용설명서 <br/><strong>한국형 통합 사용설명서</strong> 검색서비스입니다.<br/>
               로그인하시면 내가 원하는 설명서들을 한곳에 모을 수 있는
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions, mapState} from 'vuex'
+import {mapGetters, mapActions, mapState, mapMutations} from 'vuex'
 import AutoComplete from './AutoComplete.vue'
 
 export default {
@@ -31,6 +31,12 @@ export default {
   },
   created () {
     this.FETCH_CODES()
+    if (this.$auth.isAuthenticated) {
+      console.log('LOGIN 호출')
+      const token = this.$auth.getTokenSilently()
+      this.LOGIN({email: this.$auth.user.email, token: token})
+      this.CUSTOM_CREATE({userId: this.$auth.user.email})
+    }
   },
   components: {
     AutoComplete
@@ -46,7 +52,11 @@ export default {
   methods: {
     ...mapActions([
       'FETCH_RESULTS',
-      'FETCH_CODES'
+      'FETCH_CODES',
+      'CUSTOM_CREATE'
+    ]),
+    ...mapMutations([
+      'LOGIN'
     ]),
     search ({search}) {
       this.keyword = search

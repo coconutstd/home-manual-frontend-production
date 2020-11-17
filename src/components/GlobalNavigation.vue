@@ -56,7 +56,6 @@ export default {
     ]),
     login () {
       this.$auth.loginWithRedirect()
-      console.log(this.$auth)
     },
     // Log the user out
     logout () {
