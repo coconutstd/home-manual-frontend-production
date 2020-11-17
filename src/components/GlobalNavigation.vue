@@ -12,9 +12,9 @@
           <li class="nav-item">
             <div v-if="!$auth.loading">
               <!-- show login when not authenticated -->
-              <button v-if="!$auth.isAuthenticated" class="nav-link ml-auto mr-3" @click="login">Log in</button>
+              <a v-if="!$auth.isAuthenticated" class="nav-link ml-auto mr-3" @click="login">로그인</a>
               <!-- show logout when authenticated -->
-              <button v-if="$auth.isAuthenticated" class="nav-link ml-auto mr-3" @click="logout">Log out</button>
+              <a v-if="$auth.isAuthenticated" class="nav-link ml-auto mr-3" @click="logout">로그아웃</a>
             </div>
 <!--            <div v-if="isAuth">-->
 <!--              <a href="#" @click="logout" class="nav-link ml-auto mr-3">로그아웃</a>-->
@@ -56,6 +56,7 @@ export default {
     ]),
     login () {
       this.$auth.loginWithRedirect()
+      console.log(this.$auth)
     },
     // Log the user out
     logout () {
