@@ -6,6 +6,7 @@
           <div class="item">
             <h1 class="user-email" v-if="$auth.isAuthenticated">{{ $auth.user.email }} 님 안녕하세요</h1>
             <p class="main-desc">
+              융복합 프로젝트
               우리집 사용설명서 <br/><strong>한국형 통합 사용설명서</strong> 검색서비스입니다.<br/>
               로그인하시면 내가 원하는 설명서들을 한곳에 모을 수 있는
               <strong>개인모음집</strong> 서비스를 사용할 수 있습니다.
