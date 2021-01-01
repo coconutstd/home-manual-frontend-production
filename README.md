@@ -1,30 +1,32 @@
-# home-manual-frontend-production
+<h1 align="center"> 우리집 사용설명서 </h1>
 
-> A Vue.js project
+![image](https://user-images.githubusercontent.com/25981278/103438478-c5019800-4c76-11eb-9838-acce019680a2.png)
 
-## Build Setup
+<p align="center"><a src="https://homemanual.xyz">homemanual.xyz</a></p>
 
-``` bash
-# install dependencies
-npm install
+## 목차
 
-# serve with hot reload at localhost:8080
-npm run dev
+- [프로젝트 제안 배경](#프로젝트-제안-배경)
+- [주요기능](#주요기능)
+- [프로젝트 수행](#프로젝트-수행)
+- [서비스 아키텍처](#서비스-아키텍처)
+- [도전과제](#도전과제)
+- [개선점](#개선점)
 
-# build for production with minification
-npm run build
+## 프로젝트 제안 배경
 
-# build for production and view the bundle analyzer report
-npm run build --report
+![image](https://user-images.githubusercontent.com/25981278/103438599-b8317400-4c77-11eb-925f-5c8ce918cb01.png)
 
-# run unit tests
-npm run unit
+**가정집**을 둘러보면 **사용설명서**들이 위와 같이 모아져있습니다. 반면 모으지 않는 분들도 있습니다. 그렇지만 가전제품을 사용하다가 문제가 발생했을 경우에는 **공식사용설명서** 만한게 없습니다. 그런데 대부분 제품 박스 버릴 때 같이 버리십니다. 그래서 이런 사용설명서들을 **간편하게 모아서** 볼 수 없을까 하다가 생각한 **여러 회사의** **사용설명서들을** **제공해주는 사이트**입니다.
 
-# run e2e tests
-npm run e2e
+## 주요기능
 
-# run all tests
-npm test
-```
+1. [검색 및 자동완성](#검색-및-자동완성)
+2. [반응형 디자인](#반응형-디자인)
+3. [소셜 로그인](#소셜-로그인)
+4. [개인 모음집](#개인-모음집)
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 검색 및 자동완성
+
+
+
